@@ -1,14 +1,295 @@
-<html>
+<!DOCTYPE html>
+
+<html lang="pt-br">
 <head>
-<title>O começo da minha queda</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41jStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gudea:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <title>Clinica de Psicologa Ulva</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #e7faeb;
+      font-family: 'Gudea', Arial, sans-serif;
+      font-size: 16px;
+      color: #356826;
+    }
+    #title {
+      font-family: 'Gudea', sans-serif;
+      color: indigo;
+      font-weight: bold;
+      font-size: 48px;
+      margin-top: 32px;
+      margin-bottom: 16px;
+      letter-spacing: 1px;
+    }
+    #subtitle {
+      font-size: 24px;
+      font-family: 'Gudea', Arial, sans-serif;
+      color: #246300;
+      font-weight: bold;
+      margin-bottom: 16px;
+      margin-top: 16px;
+      text-align: center;
+    }
+    #menu {
+      background-color: #e7faeb;
+      margin-bottom: 24px;
+      border-radius: 8px;
+    }
+    #menu .nav-link {
+      color: #246300 ;
+      font-weight: 500;
+      font-size: 18px;
+      margin-right: 12px;
+      border-radius: 5px;
+      padding: 8px 16px;
+    }
+    #menu .nav-link.active, #menu .nav-link:hover {
+      color: #ffffff;
+      background-color: #356826;
+    }
+    section, #sobre-nos-bg, #form, #lista, #funcionarios {
+      margin-bottom: 32px;
+    }
+    #sobre-nos-bg {
+      padding: 40px 20px;
+      border-radius: 10px;
+      margin-bottom: 32px;
+    }
+    #intro {
+      font-size: 17px;
+      font-family: 'Gudea', Arial, sans-serif;
+      color: #356826;
+      padding: 20px;
+      border: 2px solid #356826;
+      border-radius: 10px;
+      background-color: #cdf1d5;
+      background-size: cover;
+      margin-bottom: 16px;
+    }
+    .p {
+      font-size: 15px;
+      font-family: 'Gudea', Arial, sans-serif;
+      color: #356826;
+      margin-bottom: 12px;
+    }
+    #funcionarios {
+      background-color: #ffffff;
+      border-radius: 10px;
+      margin-bottom: 32px;
+    }
+    #funcionarios th, #funcionarios td {
+      vertical-align: middle;
+      text-align: center;
+    }
+    #lista {
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 32px;
+    }
+    .list-group-item, .list-group-item-action {
+      background: transparent;
+      color: #246300;
+      font-family: 'Gudea', Arial, sans-serif;
+      font-size: 16px;
+      border: none;
+      padding: 10px 0;
+      display: flex;
+      align-items: center;
+    }
+    .list-group-item img, .list-group-item-action img {
+      margin-right: 8px;
+      width: 24px;
+      height: 24px;
+    }
+    #form {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      padding: 24px 20px;
+      border: 2px solid #356826;
+      border-radius: 10px;
+      background-color: #ffffff;
+      width: 100%;
+      max-width: 350px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .form-label {
+      font-size: 16px;
+      font-family: 'Gudea', Arial, sans-serif;
+      color: #356826;
+      font-weight: bold;
+      margin-top: 8px;
+    }
+    #Enviar, #Limpar {
+      background-color: #356826;
+      color: #ffffff;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 16px;
+      margin-right: 8px;
+      border: 2px solid #356826;
+    }
+    #Limpar {
+      background-color: #ffffff;
+      color: #356826;
+      border: 2px solid #356826;
+    }
+    #Enviar:hover{
+      background-color: #ffffff;
+      color: #246300;
+      border: 2px solid #246300;
+    } #Limpar:hover {
+      background-color: #246300;
+      color: #ffffff;
+    }
+    .img-fluid {
+      max-width: 32px;
+      height: auto;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+    footer {
+      background: #e7faeb;
+      color: #356826;
+      font-family: 'Gudea', Arial, sans-serif;
+      font-size: 15px;
+      text-align: center;
+      padding: 16px 0 8px 0;
+      margin-top: 32px;
+      border-top: 1px solid #cdf1d5;
+    }
+ 
+    @media (max-width: 768px) {
+      #form {
+        max-width: 100%;
+        padding: 16px 8px;
+      }
+      #sobre-nos-bg {
+        padding: 24px 6px;
+        background-size: cover;
+      }
+      #title {
+        font-size: 32px;
+      }
+      #subtitle {
+        font-size: 18px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>Tudo começou um dia</h1>
-    <h2>Até que</h2>
-    <p>
-    <a href=""
-        text text text text text text text text text text text text text text text text text text
+  <div class="container text-center">
+    <h1 id="title">Clínica Ulva</h1>
+  </div>
+  <nav id="menu" class="navbar navbar-expand-md navbar-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuClinica" id="menuHome">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="menuClinica" aria-labelledby="menuHome">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="#sobre-nos-bg">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#Objetivo">Objetivo</a>
+        </li>
+        <li class="nav-item"> 
+          <a class="nav-link" href="#funcionarios">Nossos Serviços</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#lista">Unidades</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div id="sobre-nos-bg" class="mb-4">
+    <h2 id="subtitle"><img src="psychology.png" alt="Imagem de Psicologia" class="img-fluid">Sobre nós</h2>
+    <p id="intro" class="p">
+      A Clínica Ulva é um espaço dedicado ao cuidado da saúde mental, oferecendo serviços de psicologia e terapia para indivíduos, casais e famílias. Nossa missão é proporcionar um ambiente acolhedor e seguro onde nossos clientes possam explorar seus sentimentos, superar desafios e alcançar um bem-estar emocional duradouro.
     </p>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6">
+        <h2 id="subtitle" class="text-center"><img src="psychology.png" alt="Imagem de Psicologia" class="img-fluid">Nosso Objetivo</h2>
+      </div>
+      <div id="Objetivo" class="col-md-6">
+        <p id="intro" class="p">
+          Na Clínica Ulva, contamos com uma equipe de profissionais altamente qualificados e experientes, comprometidos em oferecer atendimento personalizado e eficaz. Nossos serviços incluem terapia cognitivo-comportamental, terapia de casal, psicoterapia infantil, entre outros. Estamos aqui para ajudar você a encontrar equilíbrio, resiliência e felicidade em sua vida.
+        </p>
+      </div>
+    </div>
+    <h2 id="subtitle"><img src="psychology.png" alt="Imagem de Psicologia" class="img-fluid">Nossos Serviços</h2>
+    <table id="funcionarios" class="table table-striped table-hover table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">Nome</th>
+          <th scope="col">Especialidade</th>
+          <th scope="col">Contato</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Dr. João Silva</td>
+          <td>Psicologia Clínica</td>
+          <td>xxxxx-xxxx</td>
+        </tr>
+        <tr>
+          <td>Dra. Maria Oliveira</td>
+          <td>Terapia de Casal</td>
+          <td>xxxxx-xxxx</td>
+        </tr>
+        <tr>
+          <td>Dr. Pedro Santos</td>
+          <td>Psicologia Infantil</td>
+          <td>xxxxx-xxxx</td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="lista">
+      <h2 id="subtitle"><img src="psychology.png" alt="Imagem de Psicologia" class="img-fluid">Nossas unidades</h2>
+      <ul class="list-group">
+        <li class="list-group-item"><img src="pin.png" alt="Pin">São Bernardo do Campo</li>
+        <li class="list-group-item"><img src="pin.png" alt="Pin">Santo André</li>
+        <li class="list-group-item"><img src="pin.png" alt="Pin">São Caetano do Sul</li>
+        <li class="list-group-item"><img src="pin.png" alt="Pin">Mauá</li>
+      </ul>
+    </div>
+  </div>
+  <div id="form">
+    <h2 id="subtitle" class="text-center">Seja Parte de Linha Ulva!</h2>
+    <form method="post" action="/submit">
+      <label for="name" class="form-label">Nome</label>
+      <input type="text" class="form-control" id="name" name="name" required>
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" name="email" required> 
+      <label for="telefone" class="form-label">Telefone</label>
+      <input type="text" class="form-control" id="telefone" name="telefone" required>
+      <div class="text-center">
+        <input type="submit" id="Enviar" value="Enviar">
+        <input type="reset" id="Limpar" value="Limpar">
+      </div>
+    </form>
+  </div>
+  <footer>
+    <small>Icons made by <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons" target="_blank" rel="noopener">Those Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon" target="_blank" rel="noopener">www.flaticon.com</a></small>
+  </footer>
 </body>
-    <img src=""
 </html>
